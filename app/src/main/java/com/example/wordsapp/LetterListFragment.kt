@@ -32,6 +32,7 @@ import com.example.wordsapp.databinding.FragmentLetterListBinding
 /**
  * Entry fragment for the app. Displays a [RecyclerView] of letters.
  */
+@Suppress("DEPRECATION")
 class LetterListFragment : Fragment() {
     private var _binding: FragmentLetterListBinding? = null
 
@@ -52,7 +53,7 @@ class LetterListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Retrieve and inflate the layout for this fragment
         _binding = FragmentLetterListBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -74,6 +75,7 @@ class LetterListFragment : Fragment() {
         _binding = null
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.layout_menu, menu)
 
@@ -109,6 +111,7 @@ class LetterListFragment : Fragment() {
     /**
      * Determines how to handle interactions with the selected [MenuItem]
      */
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_switch_layout -> {
